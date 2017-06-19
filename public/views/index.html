@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="vendors/angular.min.js" charset="utf-8"></script>
+  <script src="scripts/messageboard.js" charset="utf-8"></script>
+  <script src="scripts/services/message.service.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="vendors/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/styles.css">
+  <meta charset="utf-8">
+  <title>CODE CHALLENGE 5</title>
+</head>
+
+<body ng-app="myApp">
+  <h2>MESSAGE BOARD</h2>
+  <div ng-controller="MessageController as mc" ng-init="mc.getMessage()">
+    <div class="input">
+      <input class="name" type="text" ng-model="mc.nameIn" placeholder="Username">
+      <input class="message" type="text" ng-model="mc.locationIn" placeholder="Message">
+    </div>
+    <div>
+      <button ng-click='mc.newMessage()' class="submitBtn" type="button">Submit</button>
+    </div>
+    <div class="" ng-repeat="msg in mc.theMessages">
+      <p>Username: {{msg.name}} - message: {{msg.message}}</p>
+    </div>
+
+  </div>
+</body>
+
+</html>
